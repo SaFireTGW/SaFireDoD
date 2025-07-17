@@ -1,0 +1,38 @@
+political_decisions = {	
+	proclaim_britannia = {
+  	picture = HBE
+		potential = {
+			tag = NAN
+			NOT = { has_country_flag = holy_britannia }
+		}
+		allow = {
+			HBE = { exists = no }
+			NOT = { war = yes }
+			LOT = {all_core = {owned_by = THIS}}
+			nationalism_n_imperialism = 1
+		}
+		effect = {
+			prestige = 25
+			LOT = {all_core = {add_core = THIS}}
+			AMA = {all_core = {add_core = THIS}}
+			add_accepted_culture = lotharian
+			add_accepted_culture = amazonian
+      change_tag = HBE
+			set_country_flag = holy_britannia
+		}
+	}
+	accept_inca = {
+		potential = {
+			tag = HBE
+			has_country_flag = holy_britannia
+			NOT = {has_country_flag = accept_inca}
+		}
+		allow = {
+			INC = {all_core = {owned_by = THIS}}
+		}
+		effect = {
+			set_country_flag = accept_inca
+			add_accepted_culture = quechua
+		}	
+	}
+}
